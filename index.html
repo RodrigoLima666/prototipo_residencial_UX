@@ -135,6 +135,28 @@ nav button.nm{border:1px solid color-mix(in srgb,var(--fg) 25%,transparent)}
 #s-galeria{background:linear-gradient(180deg,#e1f0e5 0%,#f2f9f4 100%)}
 #s-fachada{background:linear-gradient(160deg,#c6e1cd 0%,#e4f2e8 55%,#f6fbf8 100%)}
 #s-apto{background:linear-gradient(0deg,#d3e8d9 0%,#eef7f0 100%)}
+#lg{display:none;position:fixed;inset:0;z-index:60;background:#0008;align-items:center;justify-content:center;padding:20px}#lg.open{display:flex}
+.lgb{background:var(--bg);color:var(--fg);border-radius:18px;padding:24px;width:min(400px,100%);display:grid;gap:12px;box-shadow:0 30px 80px #0006}
+.lgb label{display:grid;gap:4px;font-size:.82rem;color:var(--mut)}.lgb input{font:inherit;padding:11px;border-radius:8px;border:1px solid color-mix(in srgb,var(--fg) 25%,transparent);background:var(--sf);color:var(--fg)}
+#s-reels{min-height:0!important;background:linear-gradient(135deg,#1c472f 0%,#2f7d4b 100%);color:#fff}#s-reels p{color:#ffffffd9}
+.rh{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.rn{display:flex;gap:8px}.rn button{width:42px;height:42px;border-radius:50%;border:1px solid #fff8;background:none;color:#fff;font-size:1.4rem;line-height:1}
+.rs{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;margin-top:20px;padding-bottom:4px}.rs::-webkit-scrollbar{display:none}
+.rc{flex:0 0 clamp(150px,42vw,210px);aspect-ratio:9/16;border-radius:16px;overflow:hidden;position:relative;scroll-snap-align:start;cursor:pointer;border:0;padding:0;text-align:left;color:#fff;background:#000}
+.rc .sa{position:absolute;inset:0}.rc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0000 40%,#000b)}
+.rc .bg{position:absolute;top:10px;left:10px;z-index:2;background:var(--ac);color:#fff;font-size:.68rem;font-weight:700;padding:4px 10px;border-radius:99px}
+.rc .pl{position:absolute;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:#fffd;display:grid;place-items:center}.rc .pl::before{content:"";border-left:14px solid #111;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
+.rc .tx{position:absolute;z-index:2;left:12px;right:12px;bottom:12px}.rc .tx b{display:block;font-size:.95rem;line-height:1.2}.rc .tx small{opacity:.85}
+#rm{display:none;position:fixed;inset:0;z-index:55;background:#000b;align-items:center;justify-content:center;padding:16px}#rm.open{display:flex}
+.rmb{position:relative;background:var(--bg);color:var(--fg);border-radius:18px;width:min(760px,100%);max-height:94vh;overflow:auto;display:grid;grid-template-columns:1fr}
+@media (min-width:700px){.rmb{grid-template-columns:300px 1fr}}
+.rma{position:relative;aspect-ratio:9/16;max-height:70vh;background:#000}.rma .sa{position:absolute;inset:0}
+.rmi{padding:22px;display:grid;gap:10px;align-content:center}.rmi i{font-style:normal;justify-self:start;background:var(--ac);color:#fff;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px}.rmi h3{font-family:var(--f);font-size:1.7rem;margin:0}.rmi p{margin:0}
+#rmX{position:absolute;top:8px;right:10px;z-index:3;width:38px;height:38px;border-radius:50%;border:0;background:#fffe;font-size:1.4rem;line-height:1;color:#111}
+.rf{display:grid;gap:14px;grid-template-columns:1fr 1fr}.rf label{display:grid;gap:4px;font-size:.82rem;color:var(--mut)}.rf .w{grid-column:1/-1}
+.rf input,.rf select{font:inherit;padding:9px;border-radius:8px;border:1px solid color-mix(in srgb,var(--fg) 25%,transparent);background:var(--sf);color:var(--fg)}
+.rf .ck{display:flex;align-items:center;gap:8px}.rf .ck input{width:auto}
+@media (max-width:600px){.rf{grid-template-columns:1fr}}
 #adm{display:none;position:fixed;inset:0;z-index:50;background:var(--bg);overflow:auto;padding:calc(16px + env(safe-area-inset-top,0px)) 20px 40px}#adm.open{display:block}
 .aw{max-width:1200px;margin:auto;display:grid;gap:28px;grid-template-columns:1fr}.w2{grid-column:1/-1}
 .ahd{display:flex;justify-content:space-between;align-items:center}
@@ -164,7 +186,7 @@ h1{font-size:clamp(3rem,5.5vw,5.4rem)}
 </head>
 <body>
 <nav aria-label="Navegação do protótipo"><b class="logo"><svg width="22" height="26" viewBox="0 0 22 26" aria-hidden="true"><path d="M11 1a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z" fill="var(--ac)"/><circle cx="11" cy="8" r="2.6" fill="#fff"/></svg>vitrine3d</b>
-<div class="nl" id="nl"><button data-go="s-busca">Empreendimentos</button><button data-go="s-video">Experiência</button><div class="dd"><button class="ddb" aria-expanded="false">Explorar em 3D</button><div class="dm"><button data-go="s-fachada">Fachada</button><button data-go="s-plantas">Plantas</button><button data-go="s-apto">Apartamento</button></div></div><button data-go="s-contato">Contato</button></div>
+<div class="nl" id="nl"><button data-go="s-busca">Empreendimentos</button><button data-go="s-reels">Oportunidades</button><button data-go="s-video">Experiência</button><div class="dd"><button class="ddb" aria-expanded="false">Explorar em 3D</button><div class="dm"><button data-go="s-fachada">Fachada</button><button data-go="s-plantas">Plantas</button><button data-go="s-apto">Apartamento</button></div></div><button data-go="s-contato">Contato</button></div>
 <button id="bAdm">Painel</button><button class="nm" id="nm" aria-expanded="false" aria-controls="nl">Menu</button>
 </nav>
 
@@ -184,6 +206,7 @@ h1{font-size:clamp(3rem,5.5vw,5.4rem)}
 <button class="chip" id="qC">Limpar filtros</button></div>
 <div><p id="qN" class="tag" aria-live="polite" style="margin-top:0"></p><div id="qG" class="cg"></div></div></div></section>
 <section id="s-galeria"><h2>Destaques</h2><div class="crw" id="crw"><div class="cr" id="cr"></div><button class="cn p" aria-label="Anterior">&#8249;</button><button class="cn n" aria-label="Próximo">&#8250;</button><div class="dots" id="cd"></div></div></section>
+<section id="s-reels"><div class="rh"><div><h2>Reels de oportunidade</h2><p>Condições especiais e últimas unidades. Toque para ver.</p></div><div class="rn"><button id="rP" aria-label="Anterior">&#8249;</button><button id="rN" aria-label="Próximo">&#8250;</button></div></div><div class="rs" id="rs"></div></section>
 <section id="s-video">
 <label class="esel">Experiência de <select id="emp" aria-label="Empreendimento"></select></label>
 <div class="reel" aria-label="Reel de exemplo"><b id="rl">Reel · Moema</b>
@@ -228,8 +251,15 @@ h1{font-size:clamp(3rem,5.5vw,5.4rem)}
 <footer class="ft"><div class="lki"><b class="logo">Vitrine 3D</b><p class="tag">Experiências imersivas de empreendimentos. Imagens e modelos ilustrativos. Protótipo.</p></div></footer></div>
 <div id="ck" class="cbar"><span><b>Utilizamos cookies</b> para otimizar o funcionamento do site e recomendar conteúdo do seu interesse.</span><button class="cta" id="ckA" style="margin:0">Aceito</button></div>
 
+<div id="rm" role="dialog" aria-modal="true" aria-label="Reel"><div class="rmb"><button id="rmX" aria-label="Fechar">&times;</button><div class="rma" id="rma"></div><div class="rmi"><i id="rmS"></i><h3 id="rmT"></h3><p id="rmP"></p><div class="ab" id="rmB"></div></div></div></div>
+<div id="lg" role="dialog" aria-modal="true" aria-label="Acesso ao painel"><div class="lgb"><h2 id="lgT" style="font-size:1.6rem">Entrar no painel</h2>
+<label>E-mail<input id="lgE" type="email" autocomplete="username"></label><label>Senha<input id="lgP" type="password" autocomplete="current-password"></label>
+<label id="lgC">Repita a senha<input id="lgC2" type="password" autocomplete="new-password"></label>
+<p id="lgM" class="tag" aria-live="polite" style="margin:0"></p>
+<button class="cta" id="lgS" type="button" style="margin:0">Entrar</button><button class="cta ghost" id="lgX" type="button" style="margin:0">Cancelar</button>
+<p class="tag" id="lgN" style="margin:0">Protótipo: o acesso fica salvo só neste navegador e não substitui um login de servidor.</p></div></div>
 <div id="adm" role="dialog" aria-modal="true" aria-label="Painel administrativo"><div class="aw">
-<header class="ahd w2"><h2>Painel administrativo</h2><button id="aX">Fechar</button></header>
+<header class="ahd w2"><h2>Painel administrativo</h2><span><button id="aOut">Sair</button> <button id="aX">Fechar</button></span></header>
 <div><button class="cta" id="aNew" style="margin:0">+ Novo empreendimento</button><div id="aList" style="margin-top:16px"></div></div>
 <div><h2 id="aTit" style="font-size:1.6rem;margin-bottom:14px">Novo empreendimento</h2><div id="af">
 <label>Nome<input id="fNome"></label><label>Bairro / região<input id="fBairro"></label>
@@ -246,8 +276,16 @@ h1{font-size:clamp(3rem,5.5vw,5.4rem)}
 <div class="w ab"><button class="cta" id="aSave">Salvar</button><button class="cta ghost" id="aDel">Excluir</button></div>
 </div><p id="aMsg" aria-live="polite" class="tag"></p></div>
 <div class="w2"><h2 style="font-size:1.6rem">Contatos recebidos</h2><div id="aLeads" style="margin-top:12px"></div><button class="cta ghost" id="aCopy" style="margin-top:12px">Copiar lista (CSV)</button></div>
-<p class="tag w2">Protótipo: os dados ficam salvos só neste navegador. Na versão final, o painel terá login e banco de dados.</p></div></div>
+<div class="w2"><h2 style="font-size:1.6rem">Reels de oportunidade</h2><div id="rList" style="margin:12px 0"></div>
+<div class="rf"><label>Título<input id="rTi"></label><label>Empreendimento<select id="rEm"></select></label>
+<label>Link do Reel<input id="rUr" type="url" placeholder="https://instagram.com/reel/..."></label>
+<label>Selo<select id="rSe"><option>Oportunidade</option><option>Últimas unidades</option><option>Condição especial</option><option>Lançamento</option></select></label>
+<label>Válido até (opcional)<input id="rVa" type="date"></label><label>Capa do Reel<input id="rCa" type="file" accept="image/*"></label>
+<div class="w" id="rCp"></div><label class="ck w"><input type="checkbox" id="rAt"> Exibir no site</label>
+<div class="w ab"><button class="cta" id="rSv" type="button">Salvar reel</button><button class="cta ghost" id="rNw" type="button">Novo reel</button></div></div></div>
+<p class="tag w2" id="aNote">Protótipo: os dados ficam salvos só neste navegador. Na versão final, o painel terá login e banco de dados.</p></div></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script>
 const R=matchMedia("(prefers-reduced-motion:reduce)").matches,$=s=>document.querySelector(s);
 document.addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(b)document.getElementById(b.dataset.go).scrollIntoView({behavior:R?"auto":"smooth"})});
@@ -330,16 +368,17 @@ g.onpointerup=()=>dx=null;
 </script>
 <script>
 const $a=s=>document.querySelector(s),KEY='vitrine_v1',esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]||'&quot;')),msg=t=>$a('#aMsg').textContent=t;
+const CFG=window.VITRINE_CONFIG||{},sb=(CFG.url&&window.supabase)?window.supabase.createClient(CFG.url,CFG.anonKey):null;
 const SEED=[{id:'aurora-moema',nome:'Residencial Aurora',bairro:'Moema',tema:'luxo',ac:'',fonte:'',anim:'',reel:'',whats:'5511900000000',plantas:['45 m²','70 m²','95 m²'],pontos:'Transporte | Metrô Eucaliptos | Linha 5-Lilás, 6 min a pé\nLazer | Parque Ibirapuera | Pista de caminhada e ciclovia\nEducação | Escola Municipal | Ensino infantil e fundamental\nServiços | Shopping Ibirapuera | Lojas, cinema e supermercado',pub:true},
 {id:'bosque-verde',nome:'Bosque Verde',bairro:'Vila Madalena',tema:'natureza',ac:'',fonte:'',anim:'',reel:'',whats:'5511900000000',plantas:['45 m²','70 m²'],pontos:'Lazer | Praça Pôr do Sol | Vista aberta e feirinha\nTransporte | Estação Vila Madalena | Linha 2-Verde',pub:true},
 {id:'skyline-paulista',nome:'Skyline Paulista',bairro:'Bela Vista',tema:'urbano',ac:'',fonte:'condensada',anim:'rapida',reel:'',whats:'5511900000000',plantas:['70 m²','95 m²'],pontos:'Transporte | Estação Trianon-MASP | Linha 2-Verde\nLazer | Avenida Paulista | Museus e eventos aos domingos\nServiços | Hospital | Atendimento 24 horas',pub:true}];
 SEED[0].preco='R$ 1.250.000';SEED[1].preco='R$ 780.000';SEED[1].status='Em construção';SEED[2].preco='R$ 990.000';SEED[2].status='Pronto';
 let DB=null,edit=null,delArm=false,curL=[];const ALLP={...P};
 try{DB=JSON.parse(localStorage.getItem(KEY))}catch(e){}
-if(!Array.isArray(DB)||!DB.length)DB=JSON.parse(JSON.stringify(SEED));
-const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(DB))}catch(e){msg('Não foi possível salvar: armazenamento cheio (imagem grande?).')}};
+if(sb)DB=[];else if(!Array.isArray(DB)||!DB.length)DB=JSON.parse(JSON.stringify(SEED));
+const save=()=>{if(sb)return;try{localStorage.setItem(KEY,JSON.stringify(DB))}catch(e){msg('Não foi possível salvar: armazenamento cheio (imagem grande?).')}};
 const slug=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-const fillSel=()=>{setTimeout(()=>{window.renderBusca&&renderBusca();window.renderLinks&&renderLinks();window.renderCar&&renderCar()});$a('#emp').innerHTML=DB.filter(x=>x.pub).map(x=>`<option value="${esc(x.id)}">${esc(x.nome)}</option>`).join('')};
+const fillSel=()=>{setTimeout(()=>{window.renderBusca&&renderBusca();window.renderLinks&&renderLinks();window.renderCar&&renderCar();window.renderReels&&renderReels()});$a('#emp').innerHTML=DB.filter(x=>x.pub).map(x=>`<option value="${esc(x.id)}">${esc(x.nome)}</option>`).join('')};
 
 function show(id){const e=DB.find(x=>x.id==id&&x.pub)||DB.find(x=>x.pub);if(!e)return;
 const d=document.documentElement,s=d.style;d.dataset.t=e.tema;['--ac','--f','--dur','--w'].forEach(k=>s.removeProperty(k));
@@ -352,21 +391,48 @@ const r=$a('#rlk'),ok=/^https?:\/\//.test(e.reel);r.style.display=ok?'inline-blo
 $a('#wa').href=e.whats?'https://wa.me/'+e.whats.replace(/\D/g,''):'#';
 P={};e.plantas.forEach(k=>{if(ALLP[k])P[k]=ALLP[k]});if(!Object.keys(P).length)Object.assign(P,ALLP);
 cur=Object.keys(P)[0];room='Sala';draw();$a('#lP').innerHTML='<option value="">Ainda não sei</option>'+Object.keys(P).map(k=>`<option>${k}</option>`).join('');try{paint()}catch(x){}$a('#emp').value=e.id}
-function renderAdm(){renderLeads();$a('#aList').innerHTML=DB.map(e=>`<article class="ac"><div><b>${esc(e.nome)}</b><small>${esc(e.bairro)} · ${e.tema} · ${e.pub?'Publicado':'Rascunho'}</small></div><div class="ab"><button data-ed="${esc(e.id)}">Editar</button><button data-cp="${esc(e.id)}">Copiar link</button><button data-vw="${esc(e.id)}">Ver no site</button></div></article>`).join('')}
+function renderAdm(){renderLeads();rAdm();$a('#aList').innerHTML=DB.map(e=>`<article class="ac"><div><b>${esc(e.nome)}</b><small>${esc(e.bairro)} · ${e.tema} · ${e.pub?'Publicado':'Rascunho'}</small></div><div class="ab"><button data-ed="${esc(e.id)}">Editar</button><button data-cp="${esc(e.id)}">Copiar link</button><button data-vw="${esc(e.id)}">Ver no site</button></div></article>`).join('')}
 function fill(e){edit=e?e.id:null;const g=i=>$a('#'+i);g('fNome').value=e?.nome||'';g('fBairro').value=e?.bairro||'';g('fSlug').value=e?.id||'';g('fTema').value=e?.tema||'luxo';g('fAcOn').checked=!!e?.ac;g('fAc').value=e?.ac||'#d9570d';g('fFonte').value=e?.fonte||'';g('fAnim').value=e?.anim||'';g('fReel').value=e?.reel||'';g('fWhats').value=e?.whats||'';
 document.querySelectorAll('[name=pl]').forEach(c=>c.checked=e?e.plantas.includes(c.value):true);g('fPub').checked=e?e.pub:true;g('fStatus').value=e?.status||'Lançamento';g('fPreco').value=e?.preco||'';curImg=e?.img||'';imgP();g('aTit').textContent=e?'Editar empreendimento':'Novo empreendimento';delArm=false;g('aDel').textContent='Excluir'}
-$a('#bAdm').onclick=()=>{$a('#adm').classList.add('open');renderAdm();fill(DB.find(x=>x.id==$a('#emp').value))};
+const AK='vitrine_auth_v1',sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode('v3d:'+s)))].map(b=>b.toString(16).padStart(2,'0')).join('');
+let AU=null;try{AU=JSON.parse(localStorage.getItem(AK))}catch(e){}
+const openAdm=()=>{$a('#adm').classList.add('open');renderAdm();rFill(null);fill(DB.find(x=>x.id==$a('#emp').value))};
+const isOk=()=>{try{return sessionStorage.getItem('v3d_ok')=='1'}catch(e){return false}};
+const showLg=()=>{const first=!sb&&!AU;$a('#lgT').textContent=first?'Criar acesso ao painel':'Entrar no painel';$a('#lgC').style.display=first?'grid':'none';$a('#lgS').textContent=first?'Criar e entrar':'Entrar';$a('#lgM').textContent='';$a('#lg').classList.add('open');$a('#lgE').focus()};
+async function pushOne(e,old){const r=await sb.from('empreendimentos').upsert({id:e.id,nome:e.nome,bairro:e.bairro,tema:e.tema,ac:e.ac||null,fonte:e.fonte||null,anim:e.anim||null,reel:e.reel||null,whats:e.whats||null,plantas:e.plantas,status:e.status,preco:e.preco||null,img:e.img||null,pub:e.pub,updated_at:new Date().toISOString()});
+if(r.error){msg('Erro ao salvar: '+r.error.message);return}
+if(old&&old!=e.id)await sb.from('empreendimentos').delete().eq('id',old);msg('Salvo no servidor.')}
+const isAdm=async()=>{const t=await sb.auth.getSession();if(!t.data.session)return false;const a=await sb.from('admins').select('user_id').maybeSingle();return !!a.data};
+async function loadRemote(admin){const r=await sb.from('empreendimentos').select('*').order('nome');if(!r.error&&r.data){DB=r.data;fillSel();show(location.hash.slice(1))}
+const rr=await sb.from('reels').select('*');if(!rr.error&&rr.data){RL=rr.data;renderReels()}
+if(admin){const l=await sb.from('leads').select('*').order('created_at',{ascending:false});if(!l.error)LD=l.data.map(x=>({...x,data:new Date(x.created_at).toLocaleString('pt-BR')}))}}
+if(sb){$a('#lgN').textContent='Acesso protegido por login no servidor.';$a('#aNote').textContent='Dados salvos no servidor (Supabase).'}
+$a('#bAdm').onclick=async()=>{try{const ok=sb?await isAdm():isOk();if(ok){if(sb)await loadRemote(true);openAdm()}else showLg()}catch(e){showLg()}};
+$a('#lgS').onclick=async()=>{const m=$a('#lgM'),em=$a('#lgE').value.trim().toLowerCase(),pw=$a('#lgP').value;
+if(!/^\S+@\S+\.\S+$/.test(em)){m.textContent='Informe um e-mail válido.';return}
+if(sb){try{const r=await sb.auth.signInWithPassword({email:em,password:pw});if(r.error){m.textContent='E-mail ou senha incorretos.';return}
+if(!(await isAdm())){await sb.auth.signOut();m.textContent='Esta conta não tem permissão de administrador.';return}
+$a('#lg').classList.remove('open');$a('#lgP').value='';await loadRemote(true);openAdm()}catch(e){m.textContent='Falha de conexão. Tente novamente.'}return}
+if(pw.length<8){m.textContent='A senha precisa ter ao menos 8 caracteres.';return}
+try{const h=await sha(em+'|'+pw);
+if(!AU){if(pw!=$a('#lgC2').value){m.textContent='As senhas não conferem.';return}AU={em,h};try{localStorage.setItem(AK,JSON.stringify(AU))}catch(e){}}
+else if(AU.em!=em||AU.h!=h){m.textContent='E-mail ou senha incorretos.';return}
+try{sessionStorage.setItem('v3d_ok','1')}catch(e){}
+$a('#lg').classList.remove('open');$a('#lgP').value='';$a('#lgC2').value='';openAdm()}catch(e){m.textContent='Não foi possível validar neste navegador.'}};
+$a('#lgX').onclick=()=>$a('#lg').classList.remove('open');
+$a('#aOut').onclick=()=>{if(sb)sb.auth.signOut();try{sessionStorage.removeItem('v3d_ok')}catch(e){}$a('#adm').classList.remove('open')};
+['lgE','lgP','lgC2'].forEach(i=>$a('#'+i).addEventListener('keydown',e=>{if(e.key=='Enter')$a('#lgS').click()}));
 $a('#aX').onclick=()=>$a('#adm').classList.remove('open');
-addEventListener('keydown',e=>{if(e.key=='Escape')$a('#adm').classList.remove('open')});
+addEventListener('keydown',e=>{if(e.key=='Escape'){$a('#rm').classList.remove('open');$a('#adm').classList.remove('open');$a('#lg').classList.remove('open')}});
 $a('#aNew').onclick=()=>fill(null);
 $a('#aSave').onclick=()=>{const g=i=>$a('#'+i).value.trim(),nome=g('fNome');if(!nome){msg('Informe o nome.');return}
 const o={nome,bairro:g('fBairro')||'Bairro',tema:g('fTema'),ac:$a('#fAcOn').checked?$a('#fAc').value:'',fonte:g('fFonte'),anim:g('fAnim'),reel:g('fReel'),whats:g('fWhats'),plantas:[...document.querySelectorAll('[name=pl]:checked')].map(c=>c.value),pub:$a('#fPub').checked,status:g('fStatus'),preco:g('fPreco'),img:curImg};
 let id=slug(g('fSlug')||nome)||'empreendimento';
 if(edit){const i=DB.findIndex(x=>x.id==edit);if(id!=edit&&DB.some(x=>x.id==id))id+='-2';DB[i]={...o,id}}else{if(DB.some(x=>x.id==id))id+='-'+Date.now()%1000;DB.push({...o,id})}
-edit=id;$a('#fSlug').value=id;save();fillSel();renderAdm();show(id);msg('Salvo.')};
+const oldId=edit;edit=id;$a('#fSlug').value=id;save();if(sb)pushOne(DB.find(x=>x.id==id),oldId);fillSel();renderAdm();show(id);msg('Salvo.')};
 $a('#aDel').onclick=()=>{if(!edit){msg('Nada para excluir.');return}if(!delArm){delArm=true;$a('#aDel').textContent='Confirmar exclusão';return}
 delArm=false;$a('#aDel').textContent='Excluir';if(DB.length<2){msg('Mantenha ao menos um empreendimento.');return}
-DB=DB.filter(x=>x.id!=edit);save();fillSel();renderAdm();show();fill(null);msg('Excluído.')};
+const del=edit;DB=DB.filter(x=>x.id!=del);save();if(sb)sb.from('empreendimentos').delete().eq('id',del).then(r=>{if(r.error)msg('Erro ao excluir: '+r.error.message)});fillSel();renderAdm();show();fill(null);msg('Excluído.')};
 document.addEventListener('click',ev=>{const t=ev.target;let b;
 if(b=t.closest('[data-ed]'))fill(DB.find(x=>x.id==b.dataset.ed));
 else if(b=t.closest('[data-cp]')){const u=location.href.split('#')[0]+'#'+b.dataset.cp;try{navigator.clipboard.writeText(u).then(()=>msg('Link copiado: '+u),()=>msg(u))}catch(e){msg(u)}}
@@ -386,15 +452,15 @@ g('qG').innerHTML=R2.map(x=>{const c=TH[x.tema]||TH.luxo,ac=x.ac||c[1];return `<
 $a('#qC').onclick=()=>{['qT','qB','qM','qS','qE'].forEach(i=>$a('#'+i).value='');renderBusca()};
 document.addEventListener('click',ev=>{const b=ev.target.closest('[data-open]');if(b){show(b.dataset.open);location.hash=b.dataset.open;$a('#s-video').scrollIntoView({behavior:R?'auto':'smooth'})}});
 const LK='vitrine_leads_v1',ORIG=location.hash.length>1?'Link direto (Reel/Stories)':'Busca no site';
-let LD=[];try{LD=JSON.parse(localStorage.getItem(LK))||[]}catch(e){}
+let LD=[];if(!sb)try{LD=JSON.parse(localStorage.getItem(LK))||[]}catch(e){}
 function renderLeads(){const el=$a('#aLeads');if(!el)return;el.innerHTML=LD.length?LD.map(l=>`<article class="ac"><div><b>${esc(l.nome)}</b> · ${esc(l.tel)}<small>${esc(l.data)} · ${esc(l.emp)}${l.planta?' · '+esc(l.planta):''} · ${esc(l.origem)}</small>${l.msg?`<small>${esc(l.msg)}</small>`:''}</div></article>`).join(''):'<p class="tag">Nenhum contato recebido ainda.</p>'}
 $a('#lS').onclick=()=>{const v=i=>$a('#'+i).value.trim(),tel=v('lT').replace(/\D/g,''),r=$a('#lR');
 if(!v('lN')){r.textContent='Informe seu nome.';return}
 if(tel.length<10){r.textContent='Informe um WhatsApp com DDD.';return}
 if(!$a('#lC').checked){r.textContent='Marque a autorização de contato.';return}
 const emp=DB.find(x=>x.id==$a('#emp').value);
-LD.unshift({data:new Date().toLocaleString('pt-BR'),nome:v('lN'),tel,email:v('lE'),emp:emp?emp.nome:'',planta:v('lP'),msg:v('lM'),origem:ORIG});
-try{localStorage.setItem(LK,JSON.stringify(LD))}catch(e){}
+const L1={nome:v('lN'),tel,email:v('lE')||null,emp:emp?emp.nome:'',planta:v('lP')||null,msg:v('lM')||null,origem:ORIG};
+if(sb){sb.from('leads').insert(L1).then(x=>{if(x.error)r.textContent='Não foi possível enviar agora. Tente novamente.'})}else{LD.unshift({data:new Date().toLocaleString('pt-BR'),...L1});try{localStorage.setItem(LK,JSON.stringify(LD))}catch(e){}}
 ['lN','lT','lE','lM'].forEach(i=>$a('#'+i).value='');$a('#lC').checked=false;r.textContent='Recebemos seu contato. Em breve um consultor fala com você.';renderLeads()};
 $a('#aCopy').onclick=()=>{const t='data;nome;telefone;email;empreendimento;planta;origem\n'+LD.map(l=>[l.data,l.nome,l.tel,l.email,l.emp,l.planta,l.origem].join(';')).join('\n');try{navigator.clipboard.writeText(t).then(()=>msg('Lista copiada.'),()=>msg('Não foi possível copiar.'))}catch(e){msg('Não foi possível copiar.')}};
 function renderLinks(){const L=DB.filter(x=>x.pub),A=[],H=[['Apartamentos prontos para morar',{s:'Pronto'}],['Apartamentos em construção',{s:'Em construção'}],['Lançamentos',{s:'Lançamento'}],['Empreendimentos de alto padrão',{e:'luxo'}],['Empreendimentos perto da natureza',{e:'natureza'}],['Apartamentos urbanos no centro',{e:'urbano'}],['Apartamentos de 45 m²',{m:'45 m²'}],['Apartamentos de 70 m²',{m:'70 m²'}],['Apartamentos de 95 m²',{m:'95 m²'}]];
@@ -419,7 +485,39 @@ $a('#cr').addEventListener('scroll',cdot,{passive:true});$a('.cn.p').onclick=()=
 document.addEventListener('click',e=>{const d=e.target.closest('#cd b');if(d)$a('#cr').scrollTo({left:d.dataset.i*$a('#cr').clientWidth,behavior:'smooth'});if(e.target.id=='fImgX'){curImg='';imgP()}});
 if(!R)setInterval(()=>{const c=$a('#crw');if(!c.matches(':hover')&&!c.contains(document.activeElement))cgo(1)},5500);
 const imgP=()=>{$a('#fImgP').innerHTML=curImg?`<img src="${curImg}" alt="" style="max-width:220px;border-radius:8px;display:block;margin-bottom:6px"><button type="button" id="fImgX">Remover imagem</button>`:'<small class="tag">Sem imagem: o carrossel usa uma ilustração.</small>'};
-$a('#fImg').onchange=ev=>{const f=ev.target.files[0];if(!f)return;const fr=new FileReader();fr.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,1200/im.width),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);curImg=c.toDataURL('image/jpeg',.8);imgP()};im.src=fr.result};fr.readAsDataURL(f)};
+$a('#fImg').onchange=ev=>{const f=ev.target.files[0];if(!f)return;const fr=new FileReader();fr.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,1200/im.width),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);if(sb){c.toBlob(async b=>{const path=Date.now()+'.jpg',up=await sb.storage.from('imagens').upload(path,b,{contentType:'image/jpeg'});if(up.error){msg('Erro no envio da imagem.');return}curImg=sb.storage.from('imagens').getPublicUrl(path).data.publicUrl;imgP()},'image/jpeg',.8)}else{curImg=c.toDataURL('image/jpeg',.8);imgP()}};im.src=fr.result};fr.readAsDataURL(f)};
+const RK='vitrine_reels_v1',RSEED=[{id:'r-aurora',titulo:'Cobertura com piscina em Moema',emp:'aurora-moema',url:'',capa:'',selo:'Últimas unidades',validade:'2026-12-31',ativo:true},{id:'r-bosque',titulo:'Entrada reduzida no Bosque Verde',emp:'bosque-verde',url:'',capa:'',selo:'Condição especial',validade:'2026-12-15',ativo:true},{id:'r-sky',titulo:'Studio pronto para morar',emp:'skyline-paulista',url:'',capa:'',selo:'Oportunidade',validade:'',ativo:true}];
+let RL=[],rEd=null,rCap='';
+if(!sb){try{RL=JSON.parse(localStorage.getItem(RK))}catch(e){}if(!Array.isArray(RL)||!RL.length)RL=JSON.parse(JSON.stringify(RSEED))}
+const rSave=()=>{if(sb)return;try{localStorage.setItem(RK,JSON.stringify(RL))}catch(e){msg('Não foi possível salvar: armazenamento cheio.')}};
+const rLive=r=>r.ativo&&(!r.validade||r.validade>=new Date().toISOString().slice(0,10));
+const rDt=v=>v.split('-').reverse().join('/');
+function renderReels(){const L=RL.filter(rLive),el=$a('#rs');$a('#s-reels').style.display=L.length?'':'none';
+el.innerHTML=L.map((r,i)=>{const e=DB.find(x=>x.id==r.emp&&x.pub);return `<button class="rc" data-rv="${esc(r.id)}"><div class="sa">${r.capa?`<img src="${r.capa}" alt="">`:art(e||{id:r.id,tema:'luxo'},50+i)}</div><span class="bg">${esc(r.selo)}</span><span class="pl"></span><span class="tx"><b>${esc(r.titulo)}</b><small>${e?esc(e.nome)+' · '+esc(e.bairro):''}</small></span></button>`}).join('')}
+function openRv(id){const r=RL.find(x=>x.id==id);if(!r)return;const em=DB.find(x=>x.id==r.emp&&x.pub),ok=/^https?:\/\//.test(r.url||'');
+$a('#rma').innerHTML=r.capa?`<img src="${r.capa}" alt="">`:art(em||{id:r.id,tema:'luxo'},99);
+$a('#rmS').textContent=r.selo;$a('#rmT').textContent=r.titulo;$a('#rmP').textContent=(em?em.nome+' · '+em.bairro:'')+(r.validade?' · Válido até '+rDt(r.validade):'');
+$a('#rmB').innerHTML=(ok?`<a class="cta" target="_blank" rel="noopener" href="${esc(r.url)}" style="text-decoration:none;margin:0;display:inline-block">Assistir no Instagram</a>`:'')+(em?`<button class="cta ghost" style="margin:0" data-open="${esc(em.id)}">Ver experiência 3D</button>`:'')+`<button class="cta ghost" style="margin:0" data-go="s-contato" data-rc="${esc(em?em.id:'')}">Quero saber mais</button>`;
+$a('#rm').classList.add('open')}
+$a('#rN').onclick=()=>$a('#rs').scrollBy({left:440,behavior:R?'auto':'smooth'});$a('#rP').onclick=()=>$a('#rs').scrollBy({left:-440,behavior:R?'auto':'smooth'});
+function rAdm(){$a('#rEm').innerHTML='<option value="">Sem empreendimento</option>'+DB.map(x=>`<option value="${esc(x.id)}">${esc(x.nome)}</option>`).join('');
+$a('#rList').innerHTML=RL.length?RL.map(r=>`<article class="ac"><div><b>${esc(r.titulo)}</b><small>${esc(r.selo)}${r.validade?' · até '+rDt(r.validade):''} · ${r.ativo?(rLive(r)?'No ar':'Vencido'):'Oculto'}</small></div><div class="ab"><button data-re="${esc(r.id)}">Editar</button><button data-rd="${esc(r.id)}">Remover</button></div></article>`).join(''):'<p class="tag">Nenhum reel cadastrado.</p>'}
+const rCp=()=>{$a('#rCp').innerHTML=rCap?`<img src="${rCap}" alt="" style="max-width:120px;border-radius:8px;display:block;margin-bottom:6px"><button type="button" id="rCx">Remover capa</button>`:'<small class="tag">Sem capa: o site usa uma ilustração.</small>'};
+function rFill(r){rEd=r?r.id:null;const g=i=>$a('#'+i);g('rTi').value=r?.titulo||'';g('rEm').value=r?.emp||'';g('rUr').value=r?.url||'';g('rSe').value=r?.selo||'Oportunidade';g('rVa').value=r?.validade||'';g('rAt').checked=r?r.ativo:true;rCap=r?.capa||'';rCp()}
+$a('#rNw').onclick=()=>rFill(null);
+$a('#rSv').onclick=()=>{const g=i=>$a('#'+i).value.trim();if(!g('rTi')){msg('Informe o título do reel.');return}
+const o={titulo:g('rTi'),emp:g('rEm')||null,url:g('rUr')||null,selo:g('rSe'),validade:g('rVa')||null,ativo:$a('#rAt').checked,capa:rCap||null};
+let id=rEd;if(id){const i=RL.findIndex(x=>x.id==id);RL[i]={...o,id}}else{id='r-'+Date.now().toString(36);RL.push({...o,id})}
+rEd=id;const row=RL.find(x=>x.id==id);rSave();if(sb)sb.from('reels').upsert({...row,updated_at:new Date().toISOString()}).then(x=>{if(x.error)msg('Erro ao salvar o reel: '+x.error.message)});rAdm();renderReels();msg('Reel salvo.')};
+$a('#rCa').onchange=ev=>{const f=ev.target.files[0];if(!f)return;const fr=new FileReader();fr.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,720/im.width),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);
+if(sb){c.toBlob(async b=>{const path='reel-'+Date.now()+'.jpg',up=await sb.storage.from('imagens').upload(path,b,{contentType:'image/jpeg'});if(up.error){msg('Erro no envio da capa.');return}rCap=sb.storage.from('imagens').getPublicUrl(path).data.publicUrl;rCp()},'image/jpeg',.8)}else{rCap=c.toDataURL('image/jpeg',.8);rCp()}};im.src=fr.result};fr.readAsDataURL(f)};
+document.addEventListener('click',e=>{const t=e.target;let b;
+if(b=t.closest('[data-rv]'))openRv(b.dataset.rv);
+if(t.closest('#rmX')||t.id=='rm'||t.closest('#rmB button'))$a('#rm').classList.remove('open');
+if(b=t.closest('[data-rc]')){if(b.dataset.rc)show(b.dataset.rc)}
+if(b=t.closest('[data-re]'))rFill(RL.find(x=>x.id==b.dataset.re));
+if(b=t.closest('[data-rd]')){const id=b.dataset.rd;RL=RL.filter(x=>x.id!=id);rSave();if(sb)sb.from('reels').delete().eq('id',id).then(x=>{if(x.error)msg('Erro ao remover: '+x.error.message)});rAdm();renderReels()}
+if(t.id=='rCx'){rCap='';rCp()}});
 let hs='';document.querySelectorAll('.htabs button').forEach(b=>b.onclick=()=>{hs=b.dataset.s;document.querySelectorAll('.htabs button').forEach(x=>x.classList.toggle('on',x==b))});
 const hgo=()=>{$a('#qT').value=$a('#hQ').value.trim();$a('#qM').value=$a('#hM').value;$a('#qS').value=hs;$a('#qB').value='';$a('#qE').value='';renderBusca();$a('#s-busca').scrollIntoView({behavior:R?'auto':'smooth'})};
 $a('#hB').onclick=hgo;$a('#hQ').addEventListener('keydown',e=>{if(e.key=='Enter')hgo()});
@@ -429,6 +527,7 @@ const nlS=o=>{$a('#nl').classList.toggle('open',o);$a('#nm').setAttribute('aria-
 $a('#nm').onclick=()=>nlS(!$a('#nl').classList.contains('open'));
 document.addEventListener('click',e=>{if(!e.target.closest('#nm')&&(e.target.closest('#nl [data-go]')||!e.target.closest('nav')))nlS(false)});
 fillSel();show(location.hash.slice(1));renderBusca();
+if(sb)loadRemote(false).then(()=>{if(DB.some(x=>x.id==location.hash.slice(1)&&x.pub))$a('#s-video').scrollIntoView()});
 if(DB.some(x=>x.id==location.hash.slice(1)&&x.pub))setTimeout(()=>$a('#s-video').scrollIntoView(),60);
 </script>
 </body>

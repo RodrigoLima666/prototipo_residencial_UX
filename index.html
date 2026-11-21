@@ -20,7 +20,7 @@ nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:20;di
 nav button{border:0;background:none;border-radius:8px;padding:9px 11px;font-size:.95rem;white-space:nowrap}
 nav button.on,.chip.on{background:var(--ac);color:var(--bg);border-color:var(--ac)}
 nav i{flex:1;min-width:6px}
-section{padding:72px 20px 56px;min-height:100svh}
+section{padding:44px 20px 40px}
 .tall{height:320svh;padding:0}
 .stick{position:sticky;top:0;height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:72px 20px 28px;overflow:hidden}
 .cta{background:var(--ac);color:var(--bg);border:0;border-radius:99px;padding:14px 24px;font-weight:700;margin-top:18px}
@@ -149,7 +149,7 @@ nav button.nm{border:1px solid color-mix(in srgb,var(--fg) 25%,transparent)}
 @media (min-width:900px){
 nav{padding:12px max(24px,calc((100vw - 1240px)/2))}
 .aw{grid-template-columns:360px 1fr}
-section{padding:110px max(40px,calc((100vw - 1240px)/2 + 40px)) 80px;min-height:100vh}
+section{padding:56px max(40px,calc((100vw - 1240px)/2 + 40px)) 56px;min-height:0}
 #s-video,#s-plantas,#s-apto,#s-regiao{display:grid;grid-template-columns:1fr 1fr;column-gap:56px;align-content:center;align-items:start}
 #s-video>*,#s-plantas>*,#s-apto>*,#s-regiao>*{grid-column:1}
 #s-video .reel{grid-column:2;grid-row:1/span 6;width:min(100%,300px);justify-self:center;align-self:center;margin:0}

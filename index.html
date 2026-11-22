@@ -193,6 +193,17 @@ body nav .nm{display:grid;place-items:center;width:48px;height:48px;padding:0;bo
 .hbody select,.hbody input{padding:13px 4px;font-size:1rem}.hbody .cta{padding:13px 26px}
 @media (max-width:759px){.hs .htabs{margin-left:0}}
 @media (max-width:480px){.hs .htabs{flex-wrap:nowrap}.hs .htabs button{padding:11px 9px;font-size:.74rem}}
+@media (min-width:900px){
+body nav .nm{display:none}
+.nl{display:flex;position:static;flex-direction:row;align-items:center;width:auto;gap:2px;padding:0;margin:0 auto;background:none;color:inherit;border:0;border-radius:0;box-shadow:none}
+.nl button{color:inherit;padding:9px 12px;font-size:.95rem;font-weight:500;white-space:nowrap}
+.nl button:hover{background:color-mix(in srgb,currentColor 12%,transparent)}
+nav .logo{margin-right:0}
+.ddb{display:inline-block}
+.dd .dm{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:200px;flex-direction:column;background:var(--bg);color:var(--fg);border:1px solid color-mix(in srgb,var(--fg) 15%,transparent);border-radius:12px;padding:6px;box-shadow:0 14px 40px #0003}
+.dd.open .dm{display:flex}.dd .dm button{color:var(--fg);padding:11px 14px}.dd .dm button:hover{background:color-mix(in srgb,var(--ac) 10%,transparent)}
+}
+@media (min-width:900px) and (max-width:1100px){.nl button{padding:8px 8px;font-size:.88rem}body #bAdm{padding:10px 16px;font-size:.74rem}}
 #adm{display:none;position:fixed;inset:0;z-index:50;background:var(--bg);overflow:auto;padding:calc(16px + env(safe-area-inset-top,0px)) 20px 40px}#adm.open{display:block}
 .aw{max-width:1200px;margin:auto;display:grid;gap:28px;grid-template-columns:1fr}.w2{grid-column:1/-1}
 .ahd{display:flex;justify-content:space-between;align-items:center}
